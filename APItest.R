@@ -1,6 +1,6 @@
 #* @filter cors
 function(req, res) {
-  
+  print(""Launched Api)
   res$setHeader("Access-Control-Allow-Origin", "*")
   
   if (req$REQUEST_METHOD == "OPTIONS") {
