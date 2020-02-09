@@ -4,7 +4,7 @@
 #
 ###########################################################
 # Update this line with the R packages to install:
-my_packages = c("plumber","quantmod")
+my_packages = c("plumber")
 ###########################################################
 install_if_missing = function(p) {
 if (p %in% rownames(installed.packages()) == FALSE) {
