@@ -3,7 +3,11 @@ library(plumber)
 library(quantmod)
 #* @apiTitle Plumber Example API
 
-
+#* @filter cors
+cors <- function(res) {
+    res$setHeader("Access-Control-Allow-Origin", "*")
+    plumber::forward()
+}
 #* Retreive stock price
 #* @param symbol stock name
 #* @get /getPrice
