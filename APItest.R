@@ -2,18 +2,6 @@
 library(plumber)
 library(quantmod)
 #* @apiTitle Plumber Example API
-#* @filter checkIP
-function(req, res){
-  res$setHeader("Access-Control-Allow-Origin", "*")
-  allowedip <- read.delim("authentication.txt", sep="\n"):  
-  if (req$REMOTE_ADDR %in% allowedip$header){
-      plumber::forward()
-  } else {
-     res$status <- 401 # Unauthorized
-     return(list(error="Authentication required")))
-  }
-}
-
 #* @filter cors
 cors <- function(res) {
     res$setHeader("Access-Control-Allow-Origin", "*")
