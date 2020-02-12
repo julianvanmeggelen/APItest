@@ -1,4 +1,4 @@
 library(plumber)
 port <- Sys.getenv('PORT')
-r <- plumb("/app/APItest.R")
-r$run()
+plumber::plumb("/app/APItest.R")$run()
+
