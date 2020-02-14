@@ -1,7 +1,7 @@
 
 library(plumber)
 library(quantmod)
-source("app/algorithm.R")
+source("/app/algorithm.R")
 #* @apiTitle Plumber Example API
 #* @filter cors
 cors <- function(res) {
