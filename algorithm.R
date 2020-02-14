@@ -71,14 +71,15 @@ train_models <- function(symbol,data){
 
 retreive_high_low <- function(symbol){
   data <- dataframe(symbol)
+  print("1")
   regression_models <- train_models(symbol,data)
-  
+  print("2")
   regression_model_high <- regression_models[[1]][[1]]
   regression_model_low <- regression_models[[1]][[2]]
   regression_model_volat <- regression_models[[1]][[3]]
   lastrow <- regression_models[2]
   av.volat <- regression_models[[3]]
-  
+  print("3")
   print(regression_models[4])
   prediction_frame <- lastrow[[1]]
   prediction_frame$lastday.vol <- prediction_frame$vol
