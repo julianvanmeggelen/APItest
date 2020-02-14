@@ -1,6 +1,7 @@
 
 library(plumber)
 library(quantmod)
+source("app/algorithm.R")
 #* @apiTitle Plumber Example API
 #* @filter cors
 cors <- function(res) {
@@ -11,9 +12,8 @@ cors <- function(res) {
 #* @param symbol stock name
 #* @get /getPrice
 function(symbol) {
-  data <- getSymbols(symbol,auto.assign=FALSE, from="2020-01-01", src='yahoo')
-  price <- as.numeric(data[nrow(data),4])
-  return(price)
+  package <- retreive_high_low(symbol)
+  return(package)
 }
 #* test
 #* @get /echo
