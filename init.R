@@ -1,4 +1,4 @@
-my_packages <- c("quantmod","plumber")
+my_packages <- c("quantmod","plumber","QuantTools")
  install_if_missing <- function(p) {
  if(p %in% rownames(installed.packages())==FALSE){
  install.packages(p)}
