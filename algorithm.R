@@ -38,19 +38,23 @@ dataframe <- function(symbol){
     rawdata$lastday.low[i] <- rawdata[i-1,3]
     rawdata$lastday.volume[i] <- rawdata[i-1,5]
   }
+  print("1")
   rawdata$fivedayema <- ema(rawdata[,4], 5)
   rawdata$tendayema <- ema(rawdata[,4], 10)
   rawdata$twentydayema <- ema(rawdata[,4], 20)
   rawdata$thirtydayema <- ema(rawdata[,4], 30)
+  print("1")
   rawdata[2:nrow(rawdata)]$openratio <- rawdata$open/rawdata$lastday.open 
   rawdata$fiftydayema <- ema(rawdata$lastday.close, 50)
   rawdata$growrate1 <- rawdata$tendayema/rawdata$fivedayema 
-  rawdata$growrate2 <- rawdata$lastday.close/rawdata$fivedayema 
+  rawdata$growrate2 <- rawdata$lastday.close/rawdata$fivedayema
+  print("1")
   colnames(rawdata)[1] <- "open"
   colnames(rawdata)[2] <- "high"
   colnames(rawdata)[3] <- "low"
   colnames(rawdata)[4] <- "close"
   colnames(rawdata)[5] <- "volume"
+  print("1")
   rawdata$volat <- rawdata$high - rawdata$low
   rawdata$openratio <- rawdata$lastday.close/rawdata$lastday.open
   return(rawdata)
