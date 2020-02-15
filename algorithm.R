@@ -43,9 +43,7 @@ dataframe <- function(symbol){
   rawdata$tendayema <- ema(rawdata[,4], 10)
   rawdata$twentydayema <- ema(rawdata[,4], 20)
   rawdata$thirtydayema <- ema(rawdata[,4], 30)
-  print("1")
-  print(rawdata)
-  #rawdata[2:nrow(rawdata)]$openratio <- rawdata$open/rawdata$lastday.open 
+  print("1") 
   print("1")
   rawdata$fiftydayema <- ema(rawdata$lastday.close, 50)
   print("1")
