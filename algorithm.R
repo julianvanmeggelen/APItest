@@ -109,6 +109,10 @@ retreive_high_low <- function(symbol){
   result.low<- denormalizedataframe(result.low.norm, data$low)
   result.volat<- denormalizedataframe(result.volat.norm, data$volat)
   
+   result.high <- round(result.high, digits=0)
+  result.low<- round(result.low, digits=0)
+  result.volat<- round(result.volat, digits=0)
+ 
   print(predicted_high)
   print(result.high)
   print(result.low)
